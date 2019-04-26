@@ -1,4 +1,4 @@
-#Yet Another MediaInfo Go Wrapper
+# Yet Another MediaInfo Go Wrapper
 
 This wrapper allows you to run [mediainfo](https://mediaarea.net/en/MediaInfo) and parse its output in usable manner.
 
@@ -7,7 +7,7 @@ Yami is inspired of [go-ffprobe](https://github.com/vansante/go-ffprobe) and can
 Current version mapping matches [XML v2](https://mediaarea.net/mediainfo/mediainfo_2_0.xsd) 
 
 
-###Example
+### Example
 
 ```go
 package main
