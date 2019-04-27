@@ -373,6 +373,8 @@ type Track struct {
 	WrittenBy                           string    `xml:"WrittenBy" json:"written_by,omitempty"`
 }
 
+//GetFirstVideoTrack provides access to first Video track of media
+//or nil if no video tracks found
 func (m *MediaInfo) GetFirstVideoTrack() *Track {
 	for _, t := range m.Media.Tracks {
 		if t == nil {
@@ -387,6 +389,8 @@ func (m *MediaInfo) GetFirstVideoTrack() *Track {
 	return nil
 }
 
+//GetFirstAudioTrack provides access to first Audio track of media
+//or nil if no audio tracks found
 func (m *MediaInfo) GetFirstAudioTrack() *Track {
 	for _, t := range m.Media.Tracks {
 		if t == nil {
@@ -401,6 +405,7 @@ func (m *MediaInfo) GetFirstAudioTrack() *Track {
 	return nil
 }
 
+//GetTracksByType provides access to an array of tracks filtered by specific type
 func (m *MediaInfo) GetTracksByType(trackType TrackType) (tracks []*Track) {
 	for _, t := range m.Media.Tracks {
 		if t == nil {

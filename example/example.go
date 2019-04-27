@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	mediainfo, err := yami.GetMediaInfo("video.mp4", 10*time.Second)
+	mediainfo, err := yami.GetMediaInfo("video.mp4", 10*time.Second,"--Language=raw")
 
 	if err != nil {
 		log.Panic(err)
