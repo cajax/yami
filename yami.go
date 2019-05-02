@@ -77,7 +77,7 @@ func GetMediaInfoContext(ctx context.Context, filePath string, arg ...string) (m
 	mediaInfo = &MediaInfo{}
 	err = xml.Unmarshal(outputBuf.Bytes(), mediaInfo)
 	if err != nil {
-		return mediaInfo, err
+		return nil, err
 	}
 
 	return mediaInfo, nil
