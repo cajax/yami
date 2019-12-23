@@ -8,7 +8,12 @@ import (
 )
 
 func main() {
-	mediainfo, err := yami.GetMediaInfo("video.mp4", 10*time.Second,"--Language=raw")
+	videoDetails("video.mp4")
+	imageDetails("image.jpg")
+}
+
+func videoDetails(filename string){
+	mediainfo, err := yami.GetMediaInfo(filename, 10*time.Second,"--Language=raw")
 
 	if err != nil {
 		log.Panic(err)
@@ -29,4 +34,24 @@ func main() {
 
 	log.Printf("Audio Format:\t%s", audio.Format)
 	log.Printf("Channels:\t\t%d", audio.Channels)
+}
+
+func imageDetails(filename string){
+	mediainfo, err := yami.GetMediaInfo(filename, 10*time.Second,"--Language=raw")
+
+	if err != nil {
+		log.Panic(err)
+	}
+
+	b, err := json.MarshalIndent(mediainfo, "", "  ")
+	if err != nil {
+		log.Panic(err)
+	}
+	log.Println(string(b))
+
+	image := mediainfo.GetFirstImageTrack()
+
+	log.Printf("Format:\t%s", image.Format)
+	log.Printf("Width:\t%d", image.Width)
+	log.Printf("Height:\t%d", image.Height)
 }
