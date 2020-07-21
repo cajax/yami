@@ -38,7 +38,7 @@ func GetMediaInfo(filePath string, timeout time.Duration, arg ...string) (mediaI
 // You may provide additional arguments like --Language=raw or SSL options
 func GetMediaInfoContext(ctx context.Context, filePath string, arg ...string) (mediaInfo *MediaInfo, err error) {
 
-	Args := append([]string{"--Output=XML"}, arg...)
+	Args := append([]string{"--Output=XML", "-f"}, arg...)
 	Args = append(Args, filePath)
 
 	cmd := exec.Command(
