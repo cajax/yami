@@ -48,6 +48,8 @@ type Track struct {
 	ChromaSubsampling                string    `xml:"ChromaSubsampling" json:"chroma_subsampling,omitempty"`
 	ChromasubsamplingPosition        string    `xml:"ChromaSubsampling_Position" json:"chroma_subsampling_position,omitempty"`
 	CodecID                          string    `xml:"CodecID" json:"codec_id,omitempty"`
+  CodecIDHint                      string    `xml:"CodecID_Hint" json:"codec_id_hint,omitempty"`
+  CodecIDInfo                      string    `xml:"CodecID_Info" json:"codec_id_info,omitempty"`
 	CodecidDescription               string    `xml:"CodecID_Description" json:"codec_id_description,omitempty"`
 	CodecidVersion                   string    `xml:"CodecID_Version" json:"codec_id_version,omitempty"`
 	CodecidCompatible                string    `xml:"CodecID_Compatible" json:"codec_id_compatible,omitempty"`
