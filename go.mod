@@ -1,3 +1,3 @@
-module github.com/cajax/yami
+module github.com/jjacque/yami
 
 go 1.12
